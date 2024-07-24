@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store</title>
+</head>
+<body>
+    <h2>Store</h2>
+    <ul>
+        {% for product in products %}
+            <li>ID: {{ product[0] }}, Name: {{ product[1] }}, Price: {{ product[2] }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Add to Cart</h3>
+    <form method="post" action="{{ url_for('add_to_cart', username=username) }}">
+        <label>Product ID:</label><br>
+        <input type="number" name="product_id" required><br>
+        <label>Quantity:</label><br>
+        <input type="number" name="quantity" required><br><br>
+        <input type="submit" value="Add to Cart">
+    </form>
+
+    <form action="{{ url_for('store', username=username) }}" method="get">
+        <input type="submit" value="Add Another Item">
+    </form>
+    
+    <form action="{{ url_for('cart', username=username) }}" method="get">
+        <input type="submit" value="View Cart">
+    </form>
+</body>
+</html>

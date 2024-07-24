@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+</head>
+<body>
+    <h2>Cart</h2>
+    <ul>
+        {% for item in cart %}
+            <li>Name: {{ item[0] }}, Quantity: {{ item[2] }}, Price: {{ item[1] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('store', username=username) }}">Add More Products</a>
+    <a href="{{ url_for('generate_bill', username=username) }}">Generate Bill</a>
+</body>
+</html>

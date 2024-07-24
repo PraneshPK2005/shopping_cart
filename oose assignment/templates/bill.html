@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill</title>
+</head>
+<body>
+    <h2>Bill</h2>
+    <ul>
+        {% for item in cart_items %}
+            <li>Name: {{ item[0] }}, Quantity: {{ item[2] }}, Price: {{ item[1] }}, Total: {{ item[1] * item[2] }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Total Amount: {{ total_amount }}</h3>
+    <a href="{{ url_for('store', username=username) }}">Back to Store</a>
+</body>
+</html>

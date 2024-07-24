@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="welcome-container">
+        <h2>Welcome to the Shopping Cart Application</h2>
+    </div>
+    <div class="glassmorphism">
+        <form action="{{ url_for('login_page') }}" method="get">
+            <input type="submit" value="Login">
+        </form>
+        <form action="{{ url_for('signup_page') }}" method="get">
+            <input type="submit" value="Signup">
+        </form>
+    </div>
+</body>
+</html>
